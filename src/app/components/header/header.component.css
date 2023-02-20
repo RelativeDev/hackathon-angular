@@ -1,0 +1,23 @@
+img {
+    width: 4rem;
+    border-radius: 2rem;
+}
+
+
+.header {
+    width: 100vw;
+    height: 6rem;
+    background-color: slategray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.header span {
+    font-size: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: rgb(0,72,173);
+    margin-left: 3rem;
+}
