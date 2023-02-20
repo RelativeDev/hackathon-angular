@@ -9,13 +9,14 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
 
+
   title = 'hackathon-angular';
   items: MenuItem[];
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
-    
+    this.primengConfig.ripple = true;
     this.items = [{
       label: 'Options',
       items: [{
@@ -47,6 +48,5 @@ export class AppComponent implements OnInit {
       ]
     }
     ];
-    this.primengConfig.ripple = true;
   }
 }

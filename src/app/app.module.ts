@@ -7,12 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from 'primeng/menubar';
-
-
+import { TableModule } from 'primeng/table';
+import { HeaderComponent } from './components/header/header.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { MenubarModule } from 'primeng/menubar';
     AppRoutingModule,
     ButtonModule,
     SidebarModule,
-    MenubarModule
+    MenubarModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
