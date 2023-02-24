@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
+import { Usuario } from './domain/usuario';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
 
   title = 'hackathon-angular';
   items: MenuItem[];
+  
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
