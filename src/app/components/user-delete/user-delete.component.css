@@ -1,0 +1,67 @@
+.fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #1e2d40;
+    padding: 2rem 2rem;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    width: 40%;
+    border-radius: 2rem;
+    font-size: 23px;
+    max-width: 40rem;
+}
+
+.texto h1{
+    color: rgb(137,208,253);
+    font-size: 25px;
+}
+
+.texto p {
+    margin: 0;
+    font-size: 22px;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 3rem;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.icone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pi-exclamation-triangle {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    position: relative;
+
+}

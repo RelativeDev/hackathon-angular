@@ -1,0 +1,17 @@
+<div class="fundo">
+    <div class="container">
+        <div class="texto">
+            <div class="icone">
+                <i class="pi pi-exclamation-triangle" style="font-size: 4rem"></i>
+                <p>Você tem certeza que deseja excluir o usuário: </p>
+            </div>
+            <h1>{{usuario.login}}</h1>
+        </div>
+        <div class="button_container">
+            <div class="buttons">
+                <p-button class="cancel" (click)="cancel()" label="Cancelar" icon="pi pi-times"></p-button>
+                <p-button (click)="delete()" label="Excluir" icon="pi pi-check"></p-button>
+            </div>
+        </div>
+    </div>
+</div>
