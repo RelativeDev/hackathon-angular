@@ -88,6 +88,10 @@ p-table td {
     margin-left: 2rem;
 }
 
+.ui-toast-message {
+    z-index: 1000; /* ou um valor superior */
+  }
+
 
 
 

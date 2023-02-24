@@ -19,6 +19,14 @@ export class UserUpdateComponent implements OnInit {
   nome: string
   sobrenome: string
 
+  UpdateUser: Usuario = {
+    nome: '',
+    email: '',
+    login: '',
+    password: '',
+    dataDeNascimento: ''
+  }
+
   ngOnInit(): void {
     this.nome = this.usuario.nome.split(" ")[0]
     this.sobrenome = this.usuario.nome.split(" ")[1]
@@ -105,14 +113,15 @@ export class UserUpdateComponent implements OnInit {
     this.UpdateUser.nome = this.nome + " " + this.sobrenome
     delete this.UpdateUser.dataDeCriacao
     delete this.UpdateUser.dataDeAtualizacao
-    const id = this.UpdateUser.id
+    const id = this.usuario.id
     delete this.UpdateUser.id
-    this.userService.update(id, this.usuario).subscribe(() => {
+    console.log(this.UpdateUser)
+    this.userService.update(id, this.UpdateUser).subscribe(() => {
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Usuário atualizado com sucesso!', life: 3000 })
       this.closeForm.emit(false)
-    }), error => {
+    }, error => {
       this.messageService.add({ severity: 'error', summary: 'Falha', detail: error.error.message, life: 3000 })
-    }
+    })
   }
 
   cancel() {

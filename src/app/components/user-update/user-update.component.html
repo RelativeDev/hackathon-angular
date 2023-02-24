@@ -4,7 +4,7 @@
             <div class="p-fluid formgrid grid">
                 <div class="field col">
                     <label for="firstname1">Firstname</label>
-                    <input formControlName="firstName" [(ngModel)]="nome" maxlength="30"
+                    <input formControlName="firstName" [(ngModel)]="nome" value="nome" maxlength="30"
                         (blur)="userCreateForm.get('firstName').markAsTouched()" name="firstName" id="firstname1"
                         type="text" pInputText>
                     <small
@@ -63,8 +63,8 @@
                     <label for="login">Login</label>
                     <div id="login" class="p-inputgroup field formgrid">
                         <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                        <input formControlName="login" [(ngModel)]="usuario.login"
-                            (blur)="userCreateForm.get('login').markAsTouched()" name="login" type="text" maxlength="25"
+                        <input formControlName="login" value="login"
+                            (blur)="userCreateForm.get('login').markAsTouched()" [(ngModel)]="usuario.login" name="login" type="text" maxlength="25"
                             pInputText placeholder="Username">
                     </div>
                     <small
