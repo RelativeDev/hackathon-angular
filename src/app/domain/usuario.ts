@@ -1,9 +1,9 @@
 export interface Usuario {
     id?: any;
-    login: string;
     nome: string;
+    login: string;
     email: string;
-    senha?: string;
+    password?: string;
     dataDeNascimento: any;
     dataDeCriacao?: any;
     dataDeAtualizacao?: any;
