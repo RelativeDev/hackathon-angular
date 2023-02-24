@@ -18,4 +18,31 @@ export class UserService {
     return this.$http.get<Usuario[]>(`${this.API}`);
   }
 
+  findById(id: any): Observable<Usuario> {
+    return this.$http.get<Usuario>(`${this.API}/${id}`);
+  }
+
+  update(id: any, usuario: Usuario): Observable<Usuario> {
+    return this.$http.put<Usuario>(`${this.API}/${id}`, usuario);
+  }
+
+  delete(id: any): any {
+    return this.$http.delete<any>(`${this.API}/${id}`);
+  }
+
+  create(obj: Usuario): any {
+    return this.$http.post<any>(`${this.API}`, obj);
+  }
+
+  letraInicial(letra: string): Observable<Usuario[]> {
+    return this.$http.get<Usuario[]>(`${this.API}/inicial/${letra}`);
+  }
+
+  aniversariantes(mes: any): Observable<Usuario[]> {
+    return this.$http.get<Usuario[]>(`${this.API}/aniversariantes/${mes}`);
+  }
+
+  provedores(): any {
+    return this.$http.get<any>(`${this.API}/provedores`);
+  }
 }
