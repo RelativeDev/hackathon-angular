@@ -1,0 +1,90 @@
+<div class="container_principal">
+    <div class="container_bar">
+        <div class="bar">
+            <div class="igual ">
+                <div>
+                    <button (click)="create()" pButton pRipple label="New" icon="pi pi-plus"
+                        class="p-button-success p-mr-2 "></button>
+                    <p-button (click)="listAll()" class="listAll" label="Todos" icon="pi pi-undo"></p-button>
+                </div>
+                <div class="pesquisa">
+                    <button pButton pRipple (click)="provedores()" type="button" label="Provedores de email"
+                        class="p-button-raised p-button-secondary provedor"></button>
+                    <div class="p-inputgroup teste">
+                        <button (click)="inicial(inputKeyword.value)" class="searchButton " type="button" pButton
+                            pRipple label="Search"></button>
+                        <input pattern="[a-zA-Z]" maxlength="1" (keydown.enter)="inicial($event.target.value)"
+                            type="text" pInputText placeholder="Listar pela inicial" #inputKeyword>
+                    </div>
+                    <p-dropdown class="teste_dois" [options]="months2" (onChange)="onMonthSelected($event)"
+                        placeholder="Aniversários em:" optionLabel="name" [showClear]="true"></p-dropdown>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <p-table [paginator]="true" [rows]="4" *ngIf="show else carregando" [value]="User"
+            class="small-col p-datatable">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 7rem;" pSortableColumn="id">Id<p-sortIcon field="id"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="nome">Nome<p-sortIcon field="nome"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="login">Login<p-sortIcon field="login"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="email">E-mail<p-sortIcon field="email"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="dataDeNascimento">D. De Nascimento<p-sortIcon field="dataDeNascimento">
+                        </p-sortIcon>
+                    </th>
+                    <th pSortableColumn="dataDeCriacao">D. De Criação<p-sortIcon field="dataDeCriacao"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="dataDeAtualizacao">D. De Atualização<p-sortIcon field="dataDeAtualizacao">
+                        </p-sortIcon>
+                    </th>
+                    <th style="text-align: center;">Editar/Excluir</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-user>
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.nome}}</td>
+                    <td>{{user.login}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.dataDeNascimento}}</td>
+                    <td>{{user.dataDeCriacao}}</td>
+                    <td>{{user.dataDeAtualizacao}}</td>
+                    <td class="text-center">
+                        <div class="buttons">
+                            <button (click)="update(user)" pButton pRipple type="button" icon="pi pi-user-edit"
+                                class="p-button-rounded p-button-info editar"></button>
+                            <button (click)="deletarShow(user)" pButton pRipple type="button" icon="pi pi-trash"
+                                class="p-button-rounded p-button-danger deletar"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="8" class="text-center">Sem resultados para a sua pesquisa!</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<app-user-delete *ngIf='deleteShow' [usuario]='user' (closeForm)="onCloseForm($event)"></app-user-delete>
+<app-user-create *ngIf='createShow' (closeForm)="onCloseForm($event)"></app-user-create>
+<app-user-update *ngIf='updateShow' [usuario]='user' (closeForm)="onCloseForm($event)"></app-user-update>
+<app-provedor-table *ngIf='provedoresShow' (closeForm)="onCloseForm($event)"></app-provedor-table>
+
+
+<p-toast></p-toast>
+
+<ng-template #carregando>
+    <div class="telaFundo">
+        <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+    </div>
+</ng-template>

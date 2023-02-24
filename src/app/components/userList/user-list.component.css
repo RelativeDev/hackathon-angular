@@ -1,0 +1,94 @@
+.container {
+    position: relative;
+    max-width: 1920px;
+    padding: 1rem 2rem;
+}
+
+.container_principal {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons button {
+    margin: 0.3rem;
+}
+
+.deletar {
+    color: rgb(31, 31, 31);
+}
+
+.editar {
+    color: rgb(0, 8, 78);
+}
+
+.telaFundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_bar {
+    position: relative;
+    max-width: 1920px;
+    width: 100vw;
+    padding: 1rem 2rem;
+}
+
+.bar {
+    width: 100%;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    border-color: rgb(82, 91, 102);
+    border: 1px solid;
+    background-color: rgb(30,45,64);
+    padding: 0.7rem 1.3rem;
+}
+
+p-table td {
+    word-break: break-all;
+}
+
+.igual {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.pesquisa {
+    display: flex;
+    flex-direction: row;
+    width: 44rem;
+    justify-content: space-between;
+}
+
+.provedor {
+    max-width: 26rem;
+}
+
+.teste {
+    width: 15rem;
+}
+
+.teste_dois {
+    width: 12rem;
+}
+
+.listAll {
+    margin-left: 2rem;
+}
+
+
+
+
+
