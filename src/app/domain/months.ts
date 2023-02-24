@@ -1,0 +1,12 @@
+export const months: any = [{name:"1 - Janeiro", value: 1},
+{name:"2 - Fevereiro", value: 2},
+{name:"3 - Março", value: 3},
+{name:"4 - Abril", value: 4},
+{name:"5 - Maio", value: 5}, 
+{name:"6 - Junho", value: 6},
+{name:"7 - julho", value: 7},
+{name:"8 - Setembro", value: 8},
+{name:"9 - Agosto", value: 9},
+{name:"10 - Outubro", value: 10},
+{name:"11 - Novembro", value: 11},
+{name:"12 - Dezembro", value: 12}]
