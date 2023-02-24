@@ -1,0 +1,46 @@
+.fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #1e2d40;
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons p-button {
+    margin-left: 2rem;
+}
+
+.emailErro {
+    display: flex;
+    flex-direction: column;
+}
+
+small {
+    color: rgb(239,143,175);
+    margin-top: 0.3rem;
+}
+
+.senha_erros {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,72 @@
+<div class="fundo">
+    <div class="card">
+        <form [formGroup]="userCreateForm" (ngSubmit)="addUser()">
+            <div class="p-fluid formgrid grid">
+                <div class="field col">
+                    <label for="firstname1">Firstname</label>
+                    <input formControlName="firstName" maxlength="30" (blur)="userCreateForm.get('firstName').markAsTouched()" name="firstName" id="firstname1" type="text" pInputText >
+                    <small *ngIf="userCreateForm.get('firstName').hasError('required') &&  userCreateForm.get('firstName').touched">Nome é obrigatório</small>
+                    <small *ngIf="userCreateForm.get('firstName').hasError('maxlength') &&  userCreateForm.get('firstName').touched">Limite de 25 caracteres</small>
+                    <small *ngIf="userCreateForm.get('firstName').hasError('whitespace') && userCreateForm.get('firstName').touched">Espaço vazio, o nome é obrigatório</small>
+                </div>
+                <div class="field col">
+                    <label for="lastname2">Lastname</label>
+                    <input formControlName="lastName" maxlength="50" (blur)="userCreateForm.get('lastName').markAsTouched()" name="lastName" id="lastname2" type="text" pInputText>
+                    <small *ngIf="userCreateForm.get('lastName').hasError('required') &&  userCreateForm.get('lastName').touched">Sobrenome é obrigatório</small>
+                    <small *ngIf="userCreateForm.get('lastName').hasError('whitespace') && userCreateForm.get('login').touched">Espaço vazio, o sobrenome é obrigatório</small>
+                    <small *ngIf="userCreateForm.get('lastName').hasError('maxlength') &&  userCreateForm.get('lastName').touched">Limite de 25 caracteres</small>
+                </div>
+            </div>
+            <div class="p-fluid formgrid grid">
+                <div class="p-fluid field col">
+                    <label for="firstname2">E-mail</label>
+                    <input formControlName="email" (blur)="userCreateForm.get('email').markAsTouched()" name="email" id="firstname2" type="text" pInputText>
+                    <div class="emailErro">
+                        <small *ngIf="userCreateForm.get('email').hasError('required') &&  userCreateForm.get('email').touched">E-mail é obrigatório</small>
+                        <small *ngIf="userCreateForm.get('email').hasError('email') && userCreateForm.get('email').touched">Digite um e-mail válido</small>
+                        <small *ngIf="userCreateForm.get('email').hasError('minlength') && userCreateForm.get('email').touched">E-mail deve ter no mínimo 10 caracteres</small>
+                    </div>
+                </div>
+                <div class="p-fluid field col-4 ">
+                    <label for="icon">Data de Nascimento</label>
+                    <p-inputMask formControlName="dataDeNascimento" mask="99/99/9999" name="dataDeNascimento"
+                        placeholder="__/__/___" slotChar="__/__/____"></p-inputMask>
+                </div>
+            </div>
+            <div class="p-fluid formgrid grid">
+                <div class="p-fluid field col ">
+                    <label for="login">Login</label>
+                    <div id="login" class="p-inputgroup field formgrid">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input formControlName = "login" (blur)="userCreateForm.get('login').markAsTouched()" name="login" type="text" maxlength="25" pInputText placeholder="Username">
+                    </div>
+                    <small *ngIf="userCreateForm.get('login').hasError('whitespace') && userCreateForm.get('login').touched">Espaço vazio, o login é obrigatório</small>
+                    <small *ngIf="userCreateForm.get('login').hasError('required') && userCreateForm.get('login').touched">Login é obrigatório</small>
+                    <small *ngIf="userCreateForm.get('login').hasError('maxlength') && userCreateForm.get('login').touched">Login deve ter no máximo 20 caracteres</small>
+                    <small *ngIf="userCreateForm.get('login').hasError('minlength') && userCreateForm.get('login').touched">Login deve ter no mínimo 5 caracteres</small>
+                </div>
+                
+                <div class="field col formgrid">
+                    <label for="pass">Password</label>
+                    <input formControlName="password" maxlength="15" (blur)="userCreateForm.get('password').markAsTouched()" id="pass" pPassword type="password" name="password"  />
+                    <div class="senha_erros">
+                    <small *ngIf="userCreateForm.get('password').hasError('required') && userCreateForm.get('password').touched">Senha é obrigatória</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('letraMinuscula') && userCreateForm.get('password').touched">Deve conter ao menos uma letra minúscula</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('letraMaiscula') && userCreateForm.get('password').touched">Deve conter ao menos uma letra maiúscula</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('numeroSenha') && userCreateForm.get('password').touched">Deve conter ao menos um número</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('caracterEspecial') && userCreateForm.get('password').touched">Deve conter ao menos um caracter especial</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('minlength') && userCreateForm.get('password').touched">Mínimo de 4 caracteres</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('maxlength') && userCreateForm.get('password').touched">Máximo de 10 caracteres</small>
+                    <small *ngIf="userCreateForm.get('password').hasError('whitespace') && userCreateForm.get('login').touched">Espaço vazio, a senha é obrigatório</small>
+                </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <p-button (click)="cancel()" label="Cancelar" icon="pi pi-times"></p-button>
+                <p-button type="submit" [disabled]="!validators()" label="Salvar" icon="pi pi-check"></p-button>
+            </div>
+            
+        </form>
+    </div>
+</div>
