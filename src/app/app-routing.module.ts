@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { UserCreateComponent } from './components/user-create/user-create.component';
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './components/login/login.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
-import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { UserListComponent } from './components/userList/user-list.component';
 
 const routes: Routes = [
-  { path: '', component: UserListComponent }
+  {path: '', component: LoginComponent},
+  { path: 'home', component: UserListComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({

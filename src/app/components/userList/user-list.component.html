@@ -13,7 +13,7 @@
                     <div class="p-inputgroup teste">
                         <button (click)="inicial(inputKeyword.value)" class="searchButton " type="button" pButton
                             pRipple label="Search"></button>
-                        <input pattern="[a-zA-Z]" maxlength="1" (keydown.enter)="inicial($event.target.value)"
+                        <input maxlength="1" (keydown.enter)="inicial($event.target.value)"
                             type="text" pInputText placeholder="Listar pela inicial" #inputKeyword>
                     </div>
                     <p-dropdown class="teste_dois" [options]="months2" (onChange)="onMonthSelected($event)"

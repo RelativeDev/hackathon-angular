@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../domain/usuario'
 import { environment } from '../../environments/environment'
 import { Observable } from 'rxjs';
+import { Login } from '../domain/login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private readonly API = environment.API;
+  private readonly API = environment.API
 
   constructor(private $http: HttpClient) { }
 
@@ -45,4 +46,4 @@ export class UserService {
   provedores(): any {
     return this.$http.get<any>(`${this.API}/provedores`);
   }
-}
+ }

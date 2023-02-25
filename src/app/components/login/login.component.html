@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="login">
+        <div class="p-inputgroup texto">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input [(ngModel)]="login.login" type="text" pInputText placeholder="Username">         
+        </div>
+        <input class="texto" type="password" pPassword [(ngModel)]="login.password"/>
+        <p-button (click)="logar()" class="button" label="Login"></p-button>
+    </div>
+</div>

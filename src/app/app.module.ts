@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {FieldsetModule} from 'primeng/fieldset';
 import { ProvedorTableComponent } from './components/provedor-table/provedor-table.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     UserUpdateComponent,
     UserDeleteComponent,
     UserCreateComponent,
-    ProvedorTableComponent
+    ProvedorTableComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     DropdownModule,
     AccordionModule,
     FieldsetModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [UserService, MessageService],
   bootstrap: [AppComponent]
